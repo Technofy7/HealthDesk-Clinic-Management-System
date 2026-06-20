@@ -85,9 +85,22 @@ CREATE TABLE MedicalRecords (
 );
 
 
---delete MedicalRecords;
---delete doctors;
---delete MedicalRecords
---delete Patients
---delete users
---delete timeslots
+delete MedicalRecords;
+delete doctors;
+delete MedicalRecords;
+delete Patients;
+delete users;
+delete timeslots;
+
+--DECLARE @sql NVARCHAR(MAX) = '';
+
+--SELECT @sql += 'ALTER TABLE ' + QUOTENAME(s.name) + '.' + QUOTENAME(t.name)
+--    + ' DROP CONSTRAINT ' + QUOTENAME(fk.name) + ';' + CHAR(13)
+--FROM sys.foreign_keys fk
+--JOIN sys.tables t ON fk.parent_object_id = t.object_id
+--JOIN sys.schemas s ON t.schema_id = s.schema_id;
+
+--EXEC sp_executesql @sql;
+
+---- Now drop tables in any order
+--DROP TABLE IF EXISTS MedicalRecords, Appointments, TimeSlots, Doctors, Patients, Users;

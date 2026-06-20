@@ -1,0 +1,12 @@
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\bin\Debug\net10.0\HealthDesk.Entities.deps.json
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\bin\Debug\net10.0\HealthDesk.Entities.dll
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\bin\Debug\net10.0\HealthDesk.Entities.pdb
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.GeneratedMSBuildEditorConfig.editorconfig
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.AssemblyInfoInputs.cache
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.AssemblyInfo.cs
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.csproj.CoreCompileInputs.cache
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.sourcelink.json
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.dll
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\refint\HealthDesk.Entities.dll
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\HealthDesk.Entities.pdb
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.Entities\obj\Debug\net10.0\ref\HealthDesk.Entities.dll
