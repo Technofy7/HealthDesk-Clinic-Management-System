@@ -9,7 +9,7 @@ F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthD
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Azure.Core.dll
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Azure.Identity.dll
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Humanizer.dll
-F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 F:\Angular And .Net And Python\Projects\HealthDesk\HealthDeskBackend\src\HealthDesk.API\bin\Debug\net10.0\Microsoft.Build.Framework.dll

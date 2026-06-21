@@ -15,6 +15,8 @@ namespace HealthDesk.Service
             services.AddScoped<ITimeSlotService, TimeSlotService>();
             services.AddScoped<IAppointmentService, AppointmentService>();
             services.AddScoped<IMedicalRecordService, MedicalRecordService>();
+            services.AddScoped<IJwtTokenService, JwtTokenService>();
+            services.AddScoped<IAuthService, AuthService>();
             return services;
         }
     }

@@ -87,7 +87,6 @@ CREATE TABLE MedicalRecords (
 
 delete MedicalRecords;
 delete doctors;
-delete MedicalRecords;
 delete Patients;
 delete users;
 delete timeslots;
@@ -104,3 +103,5 @@ delete timeslots;
 
 ---- Now drop tables in any order
 --DROP TABLE IF EXISTS MedicalRecords, Appointments, TimeSlots, Doctors, Patients, Users;
+
+select * from users;
