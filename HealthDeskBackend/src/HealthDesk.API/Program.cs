@@ -42,6 +42,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDataServices(builder.Configuration);
 builder.Services.AddBusinessServices();
 
+//This is for adding JWT auth
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>()!;
 
@@ -50,6 +51,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
+    //This is for adding JWT auth
 .AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -68,6 +70,14 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+//This is I am adding for AdminSeeder
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<HealthDeskDbContext>();
+    var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+    await AdminSeeder.SeedAdminAsync(context, configuration);
+}
 
 if (app.Environment.IsDevelopment())
 {

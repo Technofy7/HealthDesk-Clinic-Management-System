@@ -1,5 +1,6 @@
 ﻿using HealthDesk.Service;
 using HealthDesk.Service.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthDesk.API.Controllers
@@ -22,6 +23,7 @@ namespace HealthDesk.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CreateDoctorRequest request)
         {
             try
@@ -36,6 +38,7 @@ namespace HealthDesk.API.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, UpdateDoctorRequest request)
         {
             var success = await _doctorService.UpdateAsync(id, request);
@@ -43,6 +46,7 @@ namespace HealthDesk.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var success = await _doctorService.DeleteAsync(id);

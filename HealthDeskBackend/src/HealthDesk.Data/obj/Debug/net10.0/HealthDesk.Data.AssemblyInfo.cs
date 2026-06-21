@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthDesk.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f72c3ff1e9e6992670670407f72ff69dff20ef56")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6189f160ff9e7bc5e9d33eb9de482a46fa85b010")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthDesk.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthDesk.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
