@@ -104,4 +104,4 @@ delete timeslots;
 ---- Now drop tables in any order
 --DROP TABLE IF EXISTS MedicalRecords, Appointments, TimeSlots, Doctors, Patients, Users;
 
-select * from users;
+select * from users;    

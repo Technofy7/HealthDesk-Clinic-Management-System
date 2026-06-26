@@ -69,6 +69,18 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AngularDev", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+        // Only add .AllowCredentials() if you switch to cookie-based auth -
+        // not needed for the Bearer-token approach this client uses.
+    });
+});
+
 var app = builder.Build();
 
 //This is I am adding for AdminSeeder
@@ -86,6 +98,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AngularDev");
 
 app.UseAuthentication();   // must come before UseAuthorization — wasn't present at all before
 app.UseAuthorization();

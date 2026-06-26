@@ -1,0 +1,33 @@
+/* src/app/features/appointments/appointment-list/appointment-list.component.scss */
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h1 { margin: 0; }
+}
+
+.full-table {
+  width: 100%;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px;
+  color: #9e9e9e;
+  gap: 12px;
+
+  mat-icon { font-size: 3rem; height: 3rem; width: 3rem; }
+  p { margin: 0; }
+}
+
+.no-action { color: #ccc; }

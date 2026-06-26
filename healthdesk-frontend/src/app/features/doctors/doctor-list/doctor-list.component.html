@@ -1,0 +1,48 @@
+<!-- src/app/features/doctors/doctor-list/doctor-list.component.html -->
+<div class="page-container">
+  <div class="page-header">
+    <h1>Our Doctors</h1>
+
+    <!-- Search Input with event binding -->
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search doctors</mat-label>
+      <input matInput #searchInput (input)="onSearch(searchInput.value)" placeholder="Name or specialization">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <app-spinner [show]="isLoading"></app-spinner>
+
+  <div *ngIf="!isLoading">
+    <div *ngIf="filteredDoctors.length === 0" class="empty-state">
+      <mat-icon>person_search</mat-icon>
+      <p>No doctors found matching "{{ searchTerm }}"</p>
+    </div>
+
+    <!-- Doctor Cards Grid -->
+    <div class="doctors-grid">
+      <mat-card *ngFor="let doctor of filteredDoctors" class="doctor-card">
+        <mat-card-header>
+          <div mat-card-avatar class="doctor-avatar">
+            {{ (doctor.name || 'D')[0].toUpperCase() }}
+          </div>
+          <mat-card-title>{{ doctor.name || 'Dr. Unknown' }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip color="primary" selected>{{ doctor.specialization }}</mat-chip>
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p class="bio">{{ doctor.bio || 'No bio available.' }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button color="primary" routerLink="/appointments/new">
+            <mat-icon>event_available</mat-icon>
+            Book Appointment
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

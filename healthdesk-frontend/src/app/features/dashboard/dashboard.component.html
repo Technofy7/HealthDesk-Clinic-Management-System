@@ -1,0 +1,95 @@
+<!-- src/app/features/dashboard/dashboard.component.html -->
+<!-- AsyncPipe: automatically subscribes and unsubscribes from currentUser$ -->
+<div class="dashboard-container" *ngIf="currentUser$ | async as user">
+
+  <!-- Welcome Banner -->
+  <div class="welcome-banner">
+    <div>
+      <h1>Welcome back, {{ user.name }}! 👋</h1>
+      <p>{{ user.roles | roleLabel }} &nbsp;·&nbsp; Here's your health overview</p>
+    </div>
+    <button mat-raised-button color="primary" routerLink="/appointments/new">
+      <mat-icon>add</mat-icon> Book Appointment
+    </button>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <mat-card class="stat-card pending">
+      <mat-card-content>
+        <mat-icon>schedule</mat-icon>
+        <div class="stat-value">{{ stats.pending }}</div>
+        <div class="stat-label">Pending</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card confirmed">
+      <mat-card-content>
+        <mat-icon>check_circle</mat-icon>
+        <div class="stat-value">{{ stats.confirmed }}</div>
+        <div class="stat-label">Confirmed</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card completed">
+      <mat-card-content>
+        <mat-icon>task_alt</mat-icon>
+        <div class="stat-value">{{ stats.completed }}</div>
+        <div class="stat-label">Completed</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card cancelled">
+      <mat-card-content>
+        <mat-icon>cancel</mat-icon>
+        <div class="stat-value">{{ stats.cancelled }}</div>
+        <div class="stat-label">Cancelled</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Loading Spinner -->
+  <app-spinner [show]="isLoading"></app-spinner>
+
+  <!-- Recent Appointments -->
+  <mat-card *ngIf="!isLoading" class="appointments-card">
+    <mat-card-header>
+      <mat-card-title>Recent Appointments</mat-card-title>
+      <button mat-button color="primary" routerLink="/appointments">View All</button>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="appointments.length === 0" class="empty-state">
+        <mat-icon>calendar_today</mat-icon>
+        <p>No appointments yet.</p>
+        <button mat-raised-button color="primary" routerLink="/appointments/new">
+          Book your first appointment
+        </button>
+      </div>
+
+      <mat-table [dataSource]="appointments.slice(0,5)" *ngIf="appointments.length > 0">
+
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.date }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="doctor">
+          <mat-header-cell *matHeaderCellDef>Doctor</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.doctorName || '—' }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <mat-chip [color]="getStatusColor(row.status)" selected>{{ row.status }}</mat-chip>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="['date','doctor','status']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['date','doctor','status']"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+
+</div>

@@ -1,0 +1,32 @@
+<!-- src/app/shared/components/navbar/navbar.component.html -->
+<mat-toolbar color="primary" class="navbar">
+  <span class="brand" routerLink="/dashboard">🏥 HealthDesk</span>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="currentUser; else guestLinks">
+    <button mat-button routerLink="/dashboard" routerLinkActive="active-link">
+      Dashboard
+    </button>
+    <button mat-button routerLink="/appointments" routerLinkActive="active-link">
+      Appointments
+    </button>
+    <button mat-button routerLink="/doctors" routerLinkActive="active-link">
+      Doctors
+    </button>
+
+    <span class="user-info">
+      {{ currentUser.name }} &nbsp;
+      <mat-chip color="accent" selected>{{ currentUser.roles | roleLabel }}</mat-chip>
+    </span>
+
+    <button mat-icon-button (click)="logout()" matTooltip="Logout">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-template #guestLinks>
+    <button mat-button routerLink="/auth/login">Login</button>
+    <button mat-raised-button color="accent" routerLink="/auth/register">Register</button>
+  </ng-template>
+</mat-toolbar>
